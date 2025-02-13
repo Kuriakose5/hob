@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        .background-section {
+            width: 100%;
+            height: 50vh;
+            background-size: contain; /* Adjust the size of the background image */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+        }
+        .background1 {
+            background-image: url('img 2.png');
+            background-size: contain; /* Adjust the size of the background image */
+        }
+        .background2 {
+            background-image: url('img 1.png');
+            background-size: contain; /* Adjust the size of the background image */
+        }
+        .background3 {
+            background-image: url('img 4.png');
+            background-size: contain; /* Adjust the size of the background image */
+        }
+        nav {
+            background-color: rgba(16, 15, 15, 0.8);
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #0a0606;
+            color: #fff;
+            transform: scale(1.1);
+        }
+        header {
+            padding: 90px 20px 20px;
+            text-align: center;
+            background-color: rgba(153, 9, 9, 0.985);
+            color: rgb(243, 240, 240);
+            animation: fadeIn 3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .colorful-div {
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .colorful-div:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .blue { background-color: blue; }
+        footer {
+            text-align: center;
+            padding: 0%;
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            position: bottom;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        footer:hover {
+            background-color: #574545;
+        }
+        
+    </style>
+</head>
+
+    <body style="background-color: pink;">
+        
+        
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Happy Valentines Day Nithya❤️</h1>
+    </header>
+
+    <div class="background-section background1"></div>
+    <div class="background-section background2"></div>
+    <div class="background-section background3"></div>
+
+    <br>
+    <br>
+    <h1 style="text-align: center; color: rgba(153, 9, 9, 0.985);">Please Play The Audio Below  And Read</h1>
+    <link rel="stylesheet" href="style.css">
+    <div class="container" style="padding: 20px; border: 2px solid #ccc; border-radius: 10px; margin: 20px auto; max-width: 800px; background-color: #f9f9f9;">
+        <div class="gold-div" id="">
+            <img src="img 7'.png" alt="silver" style="width:100px;height:auto; display: block; margin: 0 auto;">
+            <p id="valentine-message" style="color: rgb(212, 13, 13); font-family: 'Courier New', Courier, monospace; cursor: pointer;">
+                <i><b>The second-year Valentine anniversary of our love. All the fights between us have made us who we are today. The love and care you have given me until now are priceless. Sorry for all the troubles and pain that I have caused you from the day we met until now. You always make me happy, and you are always there for me. You are my favorite person and always will be. You are the one who loved me like my mom. Thank you for that. I will love you today, tomorrow, and until the end of my life.
+    
+                    Happy Valentine's Day, My Love!
+                    I love you more. ❤️ </i></b>
+            </p>
+        </div>
+    </div>
+    
+    <div class="colorful-div gold" id="gold-div">
+        <img src="img 6.png" alt="gold" style="width:100px;height:auto; display: block; margin: 0 auto;">
+        <audio controls id="love-audio" style="display: block; margin: 0 auto;">
+            <source src="instagram_1739258066165(44.1K).m4a" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <div id="flying-loves" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+    <div id="flying-flowers" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+
+    <script src="jav.js"></script>
+    </script>
+    <footer>
+        <p>Forever Yours ❤️ </p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Trigger confetti effect when the page loads
+            function startCelebration() {
+                var duration = 5 * 1000; // 5 seconds
+                var end = Date.now() + duration;
+    
+                (function frame() {
+                    confetti({
+                        particleCount: 5,
+                        spread: 100,
+                        startVelocity: 40,
+                        colors: ["#ff0000", "#ff66b2", "#ffcc00"], // Red, pink, and gold
+                        origin: { x: Math.random(), y: Math.random() - 0.2 }
+                    });
+    
+                    if (Date.now() < end) {
+                        requestAnimationFrame(frame);
+                    }
+                })();
+            }
+    
+            startCelebration(); // Start confetti effect when page loads
+        });
+    </script>
+    
+</body>
+</html>
